@@ -47,6 +47,11 @@ app.use('/api/study-sessions', studySessionRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Learning Progress Tracker API' });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
